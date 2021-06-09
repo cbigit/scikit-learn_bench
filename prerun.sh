@@ -47,4 +47,4 @@ fi
 #https://github.com/intel/scikit-learn-intelex
 #python3 -m pip install -r sklearn_bench/requirements.txt
 
-conda install -y scikit-learn-intelex -c conda-forge
+#conda install -y scikit-learn-intelex -c conda-forge
