@@ -22,7 +22,7 @@ python runner.py --config configs/xgboost/xgb_cpu_additional_config.json --repor
 #python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/xgb_cpu_additional_config.json --merging full
 
 #Start 
-#/opt/intel/oneapi/vtune/latest/bin64/vtune-backend --web-port=6006 --alloww-remote-ui
+#/opt/intel/oneapi/vtune/latest/bin64/vtune-backend --web-port=6006 --allow-remote-ui --data-directory=/cnvrg/vtune-results
 
 #apt install -y linux-tools-common
 #You may need to install the following packages for this specific kernel:
