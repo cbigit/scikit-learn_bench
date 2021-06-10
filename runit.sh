@@ -16,3 +16,6 @@ python runner.py --config configs/xgboost/xgb_cpu_main_config.json
 
 #XGBoost Additional
 python runner.py --config configs/xgboost/xgb_cpu_additional_config.json
+
+#Start 
+#/opt/intel/oneapi/vtune/latest/bin64/vtune-backend --web-port=6006 --alloww-remote-ui
