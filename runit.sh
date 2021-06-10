@@ -6,20 +6,20 @@ conda install -y scikit-learn-intelex -c conda-forge
 echo "Running configs/svm/svc_proba_sklearn.json"
 
 #Optimized sklearn
-python runner.py --config configs/svm/svc_proba_sklearn.json
-python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/svm/svc_proba_sklearn.json --merging none
+python runner.py --config configs/svm/svc_proba_sklearn.json --report 
+#python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/svm/svc_proba_sklearn.json --merging none
 
 #Non-Optimized sklearn
-python runner.py --config configs/svm/svc_proba_sklearn.json --no-intel-optimized
-python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/svm/svc_proba_sklearn.json --merging full
+python runner.py --config configs/svm/svc_proba_sklearn.json --no-intel-optimized --report 
+#python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/svm/svc_proba_sklearn.json --merging full
 
 #XGBoost First
-python runner.py --config configs/xgboost/xgb_cpu_main_config.json
-python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/xgboost/xgb_cpu_main_config.json --merging full
+python runner.py --config configs/xgboost/xgb_cpu_main_config.json --report 
+#python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/xgboost/xgb_cpu_main_config.json --merging full
 
 #XGBoost Additional
-python runner.py --config configs/xgboost/xgb_cpu_additional_config.json
-python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/xgb_cpu_additional_config.json --merging full
+python runner.py --config configs/xgboost/xgb_cpu_additional_config.json --report 
+#python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report.xlsx --generation-config configs/xgb_cpu_additional_config.json --merging full
 
 #Start 
 #/opt/intel/oneapi/vtune/latest/bin64/vtune-backend --web-port=6006 --alloww-remote-ui
