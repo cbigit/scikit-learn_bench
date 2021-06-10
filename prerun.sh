@@ -48,5 +48,5 @@ fi
 #python3 -m pip install -r sklearn_bench/requirements.txt
 pip install openpyxl
 conda install -y scikit-learn-intelex -c conda-forge
-bash runit.sh
+
 
