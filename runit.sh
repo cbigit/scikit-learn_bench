@@ -3,7 +3,7 @@
 echo "Installing intel scikit-learn-intelex"
 conda install -y scikit-learn-intelex -c conda-forge
 
-echo "Running configs/svm/*.json on:"$model
+echo 'Running configs/svm/*.json on:'$model
 
 #Determine CPU
 model_string=$(lscpu | grep 'Model name')
