@@ -10,6 +10,13 @@ model_string=$(lscpu | grep 'Model name')
 model=$(echo $model_string | awk '{print $6}')
 echo "Running configs/svm/*.json on:"$model
 
+#Set NUMEXPR_MAX_THREADS
+lcpu_string=$(lscpu | grep 'CPU(s)')
+lcpu_count=$(echo $lcpu_string | awk '{print $2}')
+echo "Logical Cores="$lcpu_count
+echo "Setting NUMEXPR_MAX_THREADS="$lcpu_count
+export NUMEXPR_MAX_THREADS=lcpu_count
+
 #Optimized sklearn
 python runner.py --config configs/svm/svc_proba_sklearn.json --report 
 ##python /cnvrg/report_generator/report_generator.py --result-files /cnvrg/results.json --report-file /cnvrg/report1.xlsx --generation-config configs/svm/svc_proba_sklearn.json --merging full
