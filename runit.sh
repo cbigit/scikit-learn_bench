@@ -10,7 +10,11 @@ model_string=$(lscpu | grep 'Model name')
 model=$(echo $model_string | awk '{print $6}')
 echo "Running configs/svm/*.json on:"$model
 
-#Set NUMEXPR_MAX_THREADS
+#Set NUMEXPR_MAX_THREADS to handle this case
+#   INFO: Note: detected 96 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+#   INFO: Note: NumExpr detected 96 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+#   INFO: NumExpr defaulting to 8 threads.
+#
 lcpu_string=$(lscpu | grep 'CPU(s)')
 lcpu_count=$(echo $lcpu_string | awk '{print $2}')
 echo "Logical Cores="$lcpu_count
